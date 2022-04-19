@@ -1,10 +1,10 @@
-import {Ikpi,kpis} from "./kpi"
+import {Ikpi,kpis} from "./kpi";
 
 
 export const calculateKpis = (data:string[][]):Ikpi[]=>{
     const kpiIdx = new Map<number,number>();
     data[0].forEach((e,i)=>{
-        let id = kpis.findIndex((kpi)=>kpi.title==e)
+        let id = kpis.findIndex((kpi)=>kpi.title===e)
         if(id>=0){
             kpiIdx.set(i,id);
         }
