@@ -4,7 +4,7 @@ import { jsPDF } from "jspdf";
 import {calculateKpis, resetKpis} from "../services/utils"
 import {kpis} from "../services/kpi";
 
-const doc = new jsPDF();
+let doc = new jsPDF();
 
 
 
@@ -35,6 +35,7 @@ const Home: React.FC<{}> = () => {
     setFiles([]);
     resetKpis();
     setCount(0);
+    doc = new jsPDF();
   }
 
   useEffect(() => {
