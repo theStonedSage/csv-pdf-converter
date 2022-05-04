@@ -15,7 +15,6 @@ const Home: React.FC<{}> = () => {
 
   const DownloadKpis = ()=>{
     if (files) {
-      console.log(files[0]);
       for(let i=0;i<files.length;i++){
         Papa.parse(files[i], {
           complete: function(results) {
@@ -83,8 +82,10 @@ const Home: React.FC<{}> = () => {
                       onChange={(e) => {
                         var files = e.target.files;
                         if(files){
-                          let file = files[0];
-                          setFiles(f=>[...f,file]);
+                          const filesArr = Array.from(files);
+                          // console.log("from up;pad",filesArr);
+                          // let file = files[0];
+                          setFiles(f=>[...f,...filesArr]);
                         }
                       }}
                     />
