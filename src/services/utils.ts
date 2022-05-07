@@ -13,7 +13,7 @@ export const calculateKpis = (data:string[][]):number=>{
     for(let i=1;i<data.length;i++){
         for(let j=1;j<data[0].length;j++){
             if(kpiIdx.has(j)){
-                kpis[kpiIdx.get(j) as any].value += Number(data[i][j])
+                kpis[kpiIdx.get(j) as any].value += Number(data[i][j])||0;
             }
         }
     }
