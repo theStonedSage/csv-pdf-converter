@@ -47,6 +47,10 @@ export const kpis:Ikpi[] = [
     {
         title:"Unique Viewers",
         value:0
+    },
+    {
+        title:"Ad Revenue",
+        value:0
     }
 ]
 
